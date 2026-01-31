@@ -11,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.Surface
+import androidx.compose.material3.MaterialTheme
 import com.example.remeducp2.ui.theme.RemedUCP2Theme
+import com.example.remeducp2.ui.view.uicontroller.PetaNavigasi
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +23,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             RemedUCP2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding), // Apply padding from Scaffold
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        PetaNavigasi()
+                    }
                 }
             }
         }
